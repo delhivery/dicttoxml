@@ -296,7 +296,7 @@ def convert_list(items, ids, parent, attr_type):
         elif isinstance(item, dict):
             if not attr_type:
                 addline(
-                    '<item>{}</item>'.format(
+                    '{}'.format(
                         convert_dict(item, ids, parent, attr_type)
                     )
                 )
@@ -310,8 +310,8 @@ def convert_list(items, ids, parent, attr_type):
         elif isinstance(item, collections.Iterable):
             if not attr_type:
                 addline(
-                    '<item {}>{}</item>'.format(
-                        make_attrstring(attr), convert_list(
+                    '{}'.format(
+                        convert_list(
                             item, ids, 'item', attr_type
                         )
                     )
